@@ -3,18 +3,16 @@
 
 => Example: https://magento2.test
 
-# Enter `php` container
 docker-compose exec php bash
 
 cd /var/www/html/magento
 
-# Setup file permissions, except folder `dev/docker`
+#`dev/docker`
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + \
     && find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} + \
     && chown -R :www-data $(ls -Idev/docker)
 
-# Run this to install db if it is new installation,
-# or you can import your SQL in adminer: http://localhost:8088
+
 php bin/magento setup:install \
     --db-host=mysql \
     --db-name=magento_db \
