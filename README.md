@@ -1,39 +1,8 @@
-# Magento 2 docker environment
 
-![](https://images.viblo.asia/3b804ac8-287b-4d8d-96a6-9f402a81b144.png)
 
-Reference: https://viblo.asia/p/magento-2-docker-environment-eW65Gvx9lDO
-
-# Usage
-Clone or download:
-```bash
-git clone https://github.com/tuanpht/magento2-docker.git
-```
-
-Prepare you HTTPS and custom domain => See: [./vhosts/README.md](./vhosts/README.md)
 
 => Example: https://magento2.test
 
-Copy docker files to magento project folder:
-```bash
-cd magento2-docker.git
-cp -r dev/docker ~/Project/magento2-test/dev/
-cp docker-compose.dev.yml ~/Project/magento2-test/docker-compose.yml
-```
-
-Update or copy file env for docker:
-```bash
-cp dev/docker/env.docker-example.php ~/Project/magento2-test/app/etc/env.php
-```
-
-Up and running:
-```bash
-cd ~/Project/magento2-test
-docker-compose up -d
-```
-
-Prepare your magento installation:
-```bash
 # Enter `php` container
 docker-compose exec php bash
 
